@@ -3,8 +3,6 @@ kind: Deployment
 metadata:
   name: webapp-deployment
   namespace: zad2
-  labels:
-    app: webapp
 spec:
   replicas: 4
   selector:
@@ -22,6 +20,4 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: webapp-test
-        ports:
-        - containerPort: 80
+        image: janfigurapollub/sem2-chmura-zad2:1.3
