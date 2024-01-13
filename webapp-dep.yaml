@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+  namespace: zad2
+  labels:
+    app: webapp
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: webapp
+  strategy:
+    rollingUpdate:
+      maxSurge: 5
+      maxUnavailable: 2
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: nginx
+        image: webapp-test
+        ports:
+        - containerPort: 80
