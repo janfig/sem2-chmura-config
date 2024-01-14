@@ -4,9 +4,14 @@ metadata:
   name: webapp-ingeress
   namespace: zad2
 spec:
-  defaultBackend:
-    service:
-      name: webapp-svc
-      port:
-        number: 80
-
+  rules:
+  - host: zad2.lab
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: webapp-svc
+            port:
+              number: 80
