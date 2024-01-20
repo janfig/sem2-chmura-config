@@ -20,4 +20,4 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: janfigurapollub/sem2-chmura-zad2:1.6
+        image: janfigurapollub/sem2-chmura-zad2:1.7
